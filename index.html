@@ -17,7 +17,6 @@
             --black: #1A1A1A;
             --success: #27AE60;
             --danger: #E74C3C;
-            --warning: #F39C12;
             --font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -43,7 +42,6 @@
             display: flex;
         }
 
-        /* LOGIN */
         .login-container {
             display: flex;
             justify-content: center;
@@ -179,7 +177,6 @@
             font-family: 'Courier New', monospace;
         }
 
-        /* DASHBOARD */
         .dashboard-container {
             display: flex;
             min-height: 100vh;
@@ -330,7 +327,139 @@
             color: var(--blue-primary);
         }
 
-        /* TABLA DE TICKETS - ESTILO PROFESIONAL */
+        /* GRID DE TICKETS */
+        .tickets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .ticket-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--orange-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            border-left-color: var(--blue-primary);
+        }
+
+        .ticket-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .ticket-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange-primary);
+        }
+
+        .ticket-status {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: #e8f5e9;
+            color: #388e3c;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .ticket-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .ticket-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-label {
+            color: var(--gray-dark);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .ticket-value {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .ticket-description {
+            color: var(--gray-dark);
+            font-size: 13px;
+            line-height: 1.5;
+            padding: 12px 0;
+            border-top: 1px solid var(--gray-medium);
+            border-bottom: 1px solid var(--gray-medium);
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ticket-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .urgency-critico {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .urgency-alto {
+            background-color: #ffe0b2;
+            color: #e65100;
+        }
+
+        .urgency-medio {
+            background-color: #fff9c4;
+            color: #f57f17;
+        }
+
+        .urgency-bajo {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .ticket-date {
+            font-size: 12px;
+            color: var(--gray-dark);
+        }
+
+        .ticket-agent {
+            font-size: 12px;
+            color: var(--blue-primary);
+            font-weight: 600;
+        }
+
+        /* TABLA DE TICKETS */
         .tickets-table {
             background: var(--white);
             border-radius: 12px;
@@ -367,65 +496,6 @@
             background-color: var(--gray-light);
         }
 
-        .ticket-number {
-            font-weight: 700;
-            color: var(--orange-primary);
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-align: center;
-            min-width: 100px;
-        }
-
-        .status-abierto {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-
-        .status-en-progreso {
-            background-color: #fff3e0;
-            color: #f57c00;
-        }
-
-        .status-resuelto {
-            background-color: #e8f5e9;
-            color: #388e3c;
-        }
-
-        .urgency-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .urgency-critico {
-            background-color: #ffebee;
-            color: #c62828;
-        }
-
-        .urgency-alto {
-            background-color: #ffe0b2;
-            color: #e65100;
-        }
-
-        .urgency-medio {
-            background-color: #fff9c4;
-            color: #f57f17;
-        }
-
-        .urgency-bajo {
-            background-color: #e8f5e9;
-            color: #388e3c;
-        }
-
-        /* FORMULARIO ESTILO IMAGEN */
         .form-container {
             background: var(--white);
             border-radius: 12px;
@@ -457,13 +527,6 @@
             flex-direction: column;
         }
 
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--black);
-            font-size: 14px;
-        }
-
         .form-group label .required {
             color: var(--danger);
         }
@@ -474,8 +537,6 @@
             padding: 12px 16px;
             border: 1px solid var(--gray-medium);
             border-radius: 8px;
-            font-family: var(--font-family);
-            font-size: 14px;
             background-color: var(--gray-light);
         }
 
@@ -502,12 +563,10 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
         .editor-toolbar button:hover {
-            background-color: var(--orange-light);
-            border-color: var(--orange-primary);
+            background-color: #FFE6CC;
         }
 
         .editor-textarea {
@@ -533,16 +592,6 @@
         .file-upload-area:hover {
             border-color: var(--orange-primary);
             background-color: #FFE6CC;
-        }
-
-        .upload-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .upload-text {
-            color: var(--gray-dark);
-            font-size: 14px;
         }
 
         .form-actions {
@@ -616,8 +665,8 @@
         }
 
         @media (max-width: 1024px) {
-            .form-row {
-                grid-template-columns: 1fr;
+            .tickets-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
 
@@ -625,18 +674,14 @@
             .sidebar {
                 width: 100%;
             }
-
             .main-content {
                 padding: 16px;
             }
-
-            .tickets-table {
-                font-size: 12px;
+            .form-row {
+                grid-template-columns: 1fr;
             }
-
-            .tickets-table th,
-            .tickets-table td {
-                padding: 12px;
+            .tickets-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -719,17 +764,17 @@
                 </div>
 
                 <nav class="sidebar-nav">
-                    <button class="nav-item active" onclick="switchTab('dashboard')">
+                    <button class="nav-item active" onclick="switchTab('dashboard', event)">
                         <span>📊</span>
                         <span>Dashboard</span>
                     </button>
-                    <button class="nav-item" onclick="switchTab('createTicket')">
+                    <button class="nav-item" onclick="switchTab('createTicket', event)">
                         <span>➕</span>
                         <span>Crear Ticket</span>
                     </button>
-                    <button class="nav-item" onclick="switchTab('teamTickets')">
-                        <span>👥</span>
-                        <span>Tickets Equipo</span>
+                    <button class="nav-item" onclick="switchTab('myTickets', event)">
+                        <span>🎫</span>
+                        <span>Mis Tickets</span>
                     </button>
                 </nav>
 
@@ -741,7 +786,7 @@
                 <div id="dashboardTab" class="tab-content active">
                     <div class="header-section">
                         <h2>Dashboard</h2>
-                        <p class="subtitle">Resumen de actividad</p>
+                        <p class="subtitle">Resumen de todos los tickets del equipo</p>
                     </div>
 
                     <div class="stats-grid">
@@ -768,19 +813,25 @@
                                 <p id="statHigh" class="stat-number">0</p>
                             </div>
                         </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #FFD700;">🟡</div>
+                            <div>
+                                <p style="color: var(--gray-dark); margin-bottom: 8px;">Medios</p>
+                                <p id="statMedium" class="stat-number">0</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3>Todos los Tickets del Equipo</h3>
-                    <div id="teamTicketsTableDashboard" class="tickets-table">
-                        <!-- Se llena dinámicamente -->
-                    </div>
+                    <h3 style="color: var(--orange-primary); margin-top: 32px; margin-bottom: 16px;">Tickets del Equipo</h3>
+                    <div id="dashboardTicketsGrid" class="tickets-grid"></div>
                 </div>
 
                 <!-- TAB: CREAR TICKET -->
                 <div id="createTicketTab" class="tab-content">
                     <div class="header-section">
                         <h2>Crear Nuevo Ticket</h2>
-                        <p class="subtitle">Completa la información para registrar tu requerimiento o incidente</p>
+                        <p class="subtitle">Completa la información para registrar tu requerimiento</p>
                     </div>
 
                     <div class="form-container">
@@ -790,7 +841,7 @@
                         <form id="ticketForm" onsubmit="createTicket(event)">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="ticketCountry">País <span class="required">*</span></label>
+                                    <label>País <span class="required">*</span></label>
                                     <select id="ticketCountry" required>
                                         <option value="">Seleccionar...</option>
                                         <option value="CO">Colombia</option>
@@ -800,26 +851,26 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ticketCompany">Empresa <span class="required">*</span></label>
+                                    <label>Empresa <span class="required">*</span></label>
                                     <input type="text" id="ticketCompany" required placeholder="Nombre de la empresa">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="ticketRequester">Solicitante <span class="required">*</span></label>
-                                    <input type="text" id="ticketRequester" required placeholder="Nombre del solicitante">
+                                    <label>Solicitante <span class="required">*</span></label>
+                                    <input type="text" id="ticketRequester" required placeholder="Nombre">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ticketTeam">Equipo <span class="required">*</span></label>
-                                    <input type="text" id="ticketTeam" required placeholder="Equipo o área">
+                                    <label>Equipo <span class="required">*</span></label>
+                                    <input type="text" id="ticketTeam" required placeholder="Equipo">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="ticketUrgency">Urgencia <span class="required">*</span></label>
+                                    <label>Urgencia <span class="required">*</span></label>
                                     <select id="ticketUrgency" required>
                                         <option value="">Seleccionar...</option>
                                         <option value="critico">Crítico</option>
@@ -830,7 +881,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ticketType">Tipo de Solicitud <span class="required">*</span></label>
+                                    <label>Tipo <span class="required">*</span></label>
                                     <select id="ticketType" required>
                                         <option value="">Seleccionar...</option>
                                         <option value="REQ">Requerimiento (REQ)</option>
@@ -839,26 +890,25 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                                <label for="ticketDescription">Solicitud <span class="required">*</span></label>
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label>Solicitud <span class="required">*</span></label>
                                 <div class="rich-editor">
                                     <div class="editor-toolbar">
                                         <button type="button" onclick="document.execCommand('bold')"><b>B</b></button>
                                         <button type="button" onclick="document.execCommand('italic')"><i>I</i></button>
-                                        <button type="button" onclick="insertImage()">🖼️ Pegar imagen</button>
                                     </div>
-                                    <textarea id="ticketDescription" class="editor-textarea" required placeholder="Describe tu solicitud o problema aquí..."></textarea>
+                                    <textarea id="ticketDescription" class="editor-textarea" required placeholder="Describe aquí..."></textarea>
                                 </div>
                             </div>
 
-                            <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
                                 <label>Adjuntar documentos</label>
-                                <div class="file-upload-area" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
-                                    <div class="upload-icon">⬆️</div>
-                                    <p class="upload-text">Click para adjuntar o arrastra archivos aquí</p>
-                                    <input type="file" id="ticketAttachments" multiple hidden onchange="handleFileSelect(event)">
+                                <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+                                    <div style="font-size: 40px; margin-bottom: 12px;">⬆️</div>
+                                    <p>Click para adjuntar o arrastra archivos</p>
+                                    <input type="file" id="fileInput" multiple hidden onchange="handleFileSelect(event)">
                                 </div>
-                                <div id="attachmentsList" style="margin-top: 12px;"></div>
+                                <div id="attachmentsList"></div>
                             </div>
 
                             <div class="form-actions">
@@ -869,29 +919,23 @@
                     </div>
                 </div>
 
-                <!-- TAB: TICKETS DEL EQUIPO -->
-                <div id="teamTicketsTab" class="tab-content">
+                <!-- TAB: MIS TICKETS -->
+                <div id="myTicketsTab" class="tab-content">
                     <div class="header-section">
-                        <h2>Tickets del Equipo</h2>
-                        <p class="subtitle">Todos los tickets creados por el equipo</p>
+                        <h2>Mis Tickets</h2>
+                        <p class="subtitle">Tickets creados por ti</p>
                     </div>
-
-                    <div id="teamTicketsTableFull" class="tickets-table">
-                        <!-- Se llena dinámicamente -->
-                    </div>
+                    <div id="myTicketsGrid" class="tickets-grid"></div>
                 </div>
             </main>
         </div>
     </div>
 
     <script>
-        // Datos globales
         let currentUser = null;
-        let currentUserType = null;
         let tickets = [];
         let ticketCounter = 0;
 
-        // Usuarios predefinidos
         const USERS = {
             agent: {
                 email: 'jlopez@360ucsolutions.com',
@@ -907,42 +951,43 @@
             }
         };
 
-        // Inicializar datos
         function initializeData() {
-            const saved = localStorage.getItem('tickets');
-            const counter = localStorage.getItem('ticketCounter');
-            if (saved) tickets = JSON.parse(saved);
-            if (counter) ticketCounter = parseInt(counter);
+            const saved = localStorage.getItem('orangeTickets');
+            if (saved) {
+                const data = JSON.parse(saved);
+                tickets = data.tickets || [];
+                ticketCounter = data.counter || 0;
+            }
         }
 
         function saveData() {
-            localStorage.setItem('tickets', JSON.stringify(tickets));
-            localStorage.setItem('ticketCounter', ticketCounter);
+            localStorage.setItem('orangeTickets', JSON.stringify({ tickets, counter: ticketCounter }));
         }
 
-        // Navegación
         function showPage(pageId) {
             document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
         }
 
         function goToLogin(type) {
-            showPage(type === 'agent' ? 'agentLoginPage' : 'companyLoginPage');
+            showPage(type === 'agent' ? 'agentLoginPage' : 'loginPage');
         }
 
         function goBack() {
             showPage('loginPage');
         }
 
-        function switchTab(tabName) {
+        function switchTab(tabName, event) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.getElementById(tabName + 'Tab').classList.add('active');
             
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             event.target.closest('.nav-item').classList.add('active');
+            
+            if (tabName === 'dashboard') loadDashboard();
+            else if (tabName === 'myTickets') loadMyTickets();
         }
 
-        // Login
         function loginAgent(event) {
             event.preventDefault();
             const email = document.getElementById('agentEmail').value;
@@ -958,12 +1003,10 @@
 
             if (user) {
                 currentUser = user;
-                currentUserType = 'agent';
                 document.getElementById('userName').textContent = user.name;
                 document.getElementById('userRole').textContent = user.role;
                 showPage('dashboardPage');
                 loadDashboard();
-                errorDiv.classList.remove('show');
             } else {
                 errorDiv.textContent = '❌ Credenciales incorrectas';
                 errorDiv.classList.add('show');
@@ -977,63 +1020,64 @@
             document.getElementById('agentPassword').value = '';
         }
 
-        // Dashboard
         function loadDashboard() {
-            updateStats();
-            renderTicketsTable('teamTicketsTableDashboard');
-        }
-
-        function updateStats() {
             document.getElementById('statTotal').textContent = tickets.length;
             document.getElementById('statCritical').textContent = tickets.filter(t => t.urgency === 'critico').length;
             document.getElementById('statHigh').textContent = tickets.filter(t => t.urgency === 'alto').length;
+            document.getElementById('statMedium').textContent = tickets.filter(t => t.urgency === 'medio').length;
+            renderTicketsGrid('dashboardTicketsGrid', tickets);
         }
 
-        function renderTicketsTable(containerId) {
+        function loadMyTickets() {
+            const myTickets = tickets.filter(t => t.createdBy === currentUser.name);
+            renderTicketsGrid('myTicketsGrid', myTickets);
+        }
+
+        function renderTicketsGrid(containerId, ticketsToRender) {
             const container = document.getElementById(containerId);
 
-            if (tickets.length === 0) {
-                container.innerHTML = '<div class="empty-state">📭 No hay tickets creados aún</div>';
+            if (ticketsToRender.length === 0) {
+                container.innerHTML = '<div class="empty-state">📭 No hay tickets</div>';
                 return;
             }
 
-            const rows = tickets.map(ticket => `
-                <tr>
-                    <td class="ticket-number">${ticket.number}</td>
-                    <td><span class="status-badge status-abierto">Abierto</span></td>
-                    <td>${ticket.requester}</td>
-                    <td>${ticket.company}</td>
-                    <td>${ticket.description.substring(0, 50)}...</td>
-                    <td>${ticket.team}</td>
-                    <td><span class="urgency-badge urgency-${ticket.urgency}">${ticket.urgency.charAt(0).toUpperCase() + ticket.urgency.slice(1)}</span></td>
-                    <td>${ticket.createdDate}</td>
-                    <td>0%</td>
-                </tr>
-            `).join('');
+            container.innerHTML = ticketsToRender.map(ticket => `
+                <div class="ticket-card">
+                    <div class="ticket-card-header">
+                        <div class="ticket-number">${ticket.number}</div>
+                        <div class="ticket-status">Abierto</div>
+                    </div>
+                    
+                    <div class="ticket-info">
+                        <div class="ticket-info-row">
+                            <span class="ticket-label">Cliente:</span>
+                            <span class="ticket-value">${ticket.company}</span>
+                        </div>
+                        <div class="ticket-info-row">
+                            <span class="ticket-label">Solicitante:</span>
+                            <span class="ticket-value">${ticket.requester}</span>
+                        </div>
+                        <div class="ticket-info-row">
+                            <span class="ticket-label">Categoría:</span>
+                            <span class="ticket-value">${ticket.team}</span>
+                        </div>
+                    </div>
 
-            container.innerHTML = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Caso</th>
-                            <th>Estado</th>
-                            <th>Solicitante</th>
-                            <th>Cliente</th>
-                            <th>Asunto</th>
-                            <th>Categoría</th>
-                            <th>Urgencia</th>
-                            <th>Fecha de registro</th>
-                            <th>Progreso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${rows}
-                    </tbody>
-                </table>
-            `;
+                    <div class="ticket-description">${ticket.description}</div>
+
+                    <div class="ticket-footer">
+                        <div>
+                            <span class="urgency-badge urgency-${ticket.urgency}">${ticket.urgency.toUpperCase()}</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="ticket-agent">Por: ${ticket.createdBy}</div>
+                            <div class="ticket-date">${ticket.createdDate}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        // Crear Ticket
         function createTicket(event) {
             event.preventDefault();
 
@@ -1053,58 +1097,27 @@
 
             tickets.push(newTicket);
             saveData();
-            
-            alert('✅ Ticket creado exitosamente: ' + newTicket.number);
+            alert('✅ Ticket creado: ' + newTicket.number);
             document.getElementById('ticketForm').reset();
             document.getElementById('attachmentsList').innerHTML = '';
-            
             loadDashboard();
-            switchTab('dashboard');
-        }
-
-        // Manejo de archivos
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-
-        function handleDrop(event) {
-            event.preventDefault();
-            const files = event.dataTransfer.files;
-            addFilesToList(files);
         }
 
         function handleFileSelect(event) {
-            addFilesToList(event.target.files);
-        }
-
-        function addFilesToList(files) {
+            const files = event.target.files;
             const container = document.getElementById('attachmentsList');
+            container.innerHTML = '';
+            
             Array.from(files).forEach(file => {
-                const size = (file.size / 1024).toFixed(2);
                 const item = document.createElement('div');
-                item.style.cssText = 'padding: 8px; background: #f5f5f5; border-radius: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;';
-                item.innerHTML = `
-                    <span>📎 ${file.name} (${size} KB)</span>
-                    <button type="button" onclick="this.parentElement.remove()">✕</button>
-                `;
+                item.style.cssText = 'padding: 8px; background: #f5f5f5; margin: 8px 0; border-radius: 4px;';
+                item.textContent = '📎 ' + file.name + ' (' + (file.size / 1024).toFixed(2) + ' KB)';
                 container.appendChild(item);
             });
         }
 
-        function insertImage() {
-            alert('Función de insertar imagen será habilitada próximamente');
-        }
-
-        // Inicialización
         document.addEventListener('DOMContentLoaded', () => {
             initializeData();
-        });
-
-        // Click en file upload
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.file-upload-area')) {
-                document.getElementById('ticketAttachments').click();
-            }
         });
     </script>
 
